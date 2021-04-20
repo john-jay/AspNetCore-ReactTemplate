@@ -23,7 +23,10 @@ module.exports = {
     module: {
         rules: [
             { test: /\.css$/, use: extractCSS.extract(['css-loader?minimize']) },
-            { test: /\.js?$/, use: { loader: 'babel-loader', options: { presets: ['@babel/preset-react', '@babel/preset-env'] } } },
+            { test: /\.jsx?$/, use: { loader: 'babel-loader', options: { presets: ['@babel/preset-react', '@babel/preset-env'] } } },
         ]
+    },
+    resolve: {
+        extensions: [".js", ".jsx"]
     }
 };
